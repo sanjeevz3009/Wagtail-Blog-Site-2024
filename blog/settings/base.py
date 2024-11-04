@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     "home",
     "search",
+    "images",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -188,4 +189,15 @@ WAGTAILDOCS_EXTENSIONS = [
     "txt",
     "xlsx",
     "zip",
+]
+
+WAGTAIL_IMAGES_IMAGE_MODEL = "images.CustomImage"
+
+WAGTAILIMAGES_EXTENSIONS = [
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "svg",
+    "webp",
 ]
