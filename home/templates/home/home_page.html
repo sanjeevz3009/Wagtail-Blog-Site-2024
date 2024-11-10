@@ -16,12 +16,17 @@
     <hr>
     <hr>
 
+    {% image page.image fill-150x150-c100 format-jpeg %}
+    {% image page.image width-400 %}
+    {% image page.image width-400 format-avif-lossless %}
+    {% image page.image width-400 format-webp-lossless %}
    
-    {% image page.image fill-90x200 as custom_img %}
-    <img src="{{ custom_img.url }}" alt="{{ custom_img.alt }}">
+    {% image image page.image fill-90x200 as custom_img %}
     {{ custom_img.url }}
-    {{ custom_img.width }}
-    {{ custom_img.height }}
 
+    <h3>Dynamic Image Serve View Below</h3>
+    {% image_url page.image "fill-150x150|jpegquality-100" as custom_img2 %}
+    {{ custom_img2 }}
+    <img src="{{ custom_img2 }}" alt="Django Unchained">
 
 {% endblock content %}
