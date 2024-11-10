@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "home",
     "search",
     "images",
+    "documents",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -201,3 +202,5 @@ WAGTAILIMAGES_EXTENSIONS = [
     "svg",
     "webp",
 ]
+
+WAGTAILDOCS_DOCUMENT_MODEL = "documents.CustomDocument"

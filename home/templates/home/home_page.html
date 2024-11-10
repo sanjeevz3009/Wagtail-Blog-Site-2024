@@ -4,29 +4,15 @@
 
 {% block content %}
 
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.subtitle }}</p>
-
-    {% if page.body %}
-        {{ page.body|richtext }}
-    {% endif %}
-
+  {% if page.custom_document %}
+    <h3>This is the download URL:</h3>
+    {{ page.custom_document.url }}
     <hr>
+    <a href="{{ page.custom_document.url }}" download>Download</a>
     <hr>
+    <p>Document Title: {{ page.custom_document.title }}</p>
     <hr>
-    <hr>
-
-    {% image page.image fill-150x150-c100 format-jpeg %}
-    {% image page.image width-400 %}
-    {% image page.image width-400 format-avif-lossless %}
-    {% image page.image width-400 format-webp-lossless %}
-   
-    {% image image page.image fill-90x200 as custom_img %}
-    {{ custom_img.url }}
-
-    <h3>Dynamic Image Serve View Below</h3>
-    {% image_url page.image "fill-150x150|jpegquality-100" as custom_img2 %}
-    {{ custom_img2 }}
-    <img src="{{ custom_img2 }}" alt="Django Unchained">
+    <p>Document Description: {{ page.custom_document.description }}</p></p>
+  {% endif %}
 
 {% endblock content %}
