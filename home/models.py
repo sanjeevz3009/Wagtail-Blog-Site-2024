@@ -10,6 +10,7 @@ from wagtail.documents import get_document_model
 class HomePage(Page):
     subtitle = models.CharField(max_length=100, blank=True, null=True)
     body = RichTextField(blank=True)
+    max_count = 1
 
     image = models.ForeignKey(
         get_image_model(),  # "wagtailimages.Image"
